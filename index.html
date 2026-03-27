@@ -282,6 +282,74 @@
       font-weight: 600;
     }
 
+    .pub-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+      align-items: center;
+    }
+
+    .github-star-button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 20px;
+      padding: 0;
+      border-radius: 999px;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 1px rgba(22, 79, 152, 0.08);
+    }
+
+    .github-star-button iframe {
+      display: block;
+      border: 0;
+      overflow: hidden;
+    }
+
+    .visitor-map-shell {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(234, 243, 255, 0.9), rgba(255, 255, 255, 0.98)),
+        #ffffff;
+    }
+
+    .visitor-map-shell p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .visitor-map-link {
+      display: block;
+    }
+
+    .visitor-map-image {
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(29, 111, 216, 0.14);
+      border-radius: 18px;
+      background: #f8fbff;
+      box-shadow: 0 14px 28px rgba(37, 58, 89, 0.08);
+    }
+
+    .visitor-map-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .visitor-map-actions a {
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: #eef4fb;
+      color: #164f98;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
     .footer {
       margin-top: 20px;
       text-align: right;
@@ -395,6 +463,16 @@
               <a href="https://github.com/unidex-ai/UniDex">Code</a>
               <a href="https://x.com/Gu__Zhang/status/2036501836371513736">Twitter</a>
             </div>
+            <div class="pub-metrics">
+              <span class="github-star-button">
+                <iframe
+                  src="https://ghbtns.com/github-btn.html?user=unidex-ai&amp;repo=UniDex&amp;type=star&amp;count=true"
+                  width="160"
+                  height="20"
+                  title="GitHub stars for UniDex"
+                  loading="lazy"></iframe>
+              </span>
+            </div>
             <p class="abstract">UniDex is a robot foundation suite to construct large-scale robot data from egocentric human videos, and a vision-language-action policy for universal dexterous hand control.</p>
           </div>
         </article>
@@ -411,6 +489,16 @@
               <a href="https://arxiv.org/abs/2503.02881">Paper</a>
               <a href="https://github.com/xiaoxiaoxh/reactive_diffusion_policy">Code</a>
               <a href="https://x.com/HanXue012/status/1897671592429470086">Twitter</a>
+            </div>
+            <div class="pub-metrics">
+              <span class="github-star-button">
+                <iframe
+                  src="https://ghbtns.com/github-btn.html?user=xiaoxiaoxh&amp;repo=reactive_diffusion_policy&amp;type=star&amp;count=true"
+                  width="160"
+                  height="20"
+                  title="GitHub stars for Reactive Diffusion Policy"
+                  loading="lazy"></iframe>
+              </span>
             </div>
             <p class="abstract">This work introduces TactAR, a low-cost teleoperation system with real-time tactile feedback through AR, together with Reactive Diffusion Policy, a slow-fast visual-tactile imitation learning algorithm for contact-rich manipulation.</p>
           </div>
@@ -430,6 +518,16 @@
               <a href="https://github.com/YanjieZe/3D-Diffusion-Policy">Code</a>
               <a href="https://twitter.com/ZeYanjie/status/1765414787775963232">Twitter</a>
             </div>
+            <div class="pub-metrics">
+              <span class="github-star-button">
+                <iframe
+                  src="https://ghbtns.com/github-btn.html?user=YanjieZe&amp;repo=3D-Diffusion-Policy&amp;type=star&amp;count=true"
+                  width="160"
+                  height="20"
+                  title="GitHub stars for 3D Diffusion Policy"
+                  loading="lazy"></iframe>
+              </span>
+            </div>
             <p class="abstract">3D Diffusion Policy shows how simple 3D visual representations can be incorporated into diffusion policies for more generalizable visuomotor imitation learning.</p>
           </div>
         </article>
@@ -446,6 +544,16 @@
               <a href="https://arxiv.org/pdf/2403.08716.pdf">Paper</a>
               <a href="https://github.com/Genesis-Embodied-AI/DiffTactile">Code</a>
               <a href="https://twitter.com/gan_chuang/status/1771268662353150183">Twitter</a>
+            </div>
+            <div class="pub-metrics">
+              <span class="github-star-button">
+                <iframe
+                  src="https://ghbtns.com/github-btn.html?user=Genesis-Embodied-AI&amp;repo=DiffTactile&amp;type=star&amp;count=true"
+                  width="160"
+                  height="20"
+                  title="GitHub stars for DiffTactile"
+                  loading="lazy"></iframe>
+              </span>
             </div>
             <p class="abstract">DIFFTACTILE is a physics-based and fully differentiable tactile simulation system built to provide dense and physically accurate tactile feedback for robotic manipulation.</p>
           </div>
@@ -572,6 +680,27 @@
         <li>2021, 2022: Merit Student (Top 5% SJTU)</li>
         <li>2020, 2021, 2022, 2023: Zhiyuan Honor Scholarship (Top 5% SJTU, RMB 5,000)</li>
       </ul>
+    </section>
+
+    <section class="panel section">
+      <div class="section-header">
+        <h2>Visitor Map</h2>
+        <p>Geographic footprint of homepage visitors</p>
+      </div>
+      <div class="visitor-map-shell">
+        <p>This map starts collecting homepage visits after deployment and updates automatically as new visitors arrive.</p>
+        <a class="visitor-map-link" href="https://smallcounter.com/vmap/1772817272/">
+          <img
+            class="visitor-map-image"
+            src="https://smallcounter.com/map/view.php?type=180&amp;id=1772817272"
+            alt="Visitor map for guzhang1.github.io"
+            loading="lazy">
+        </a>
+        <div class="visitor-map-actions">
+          <a href="https://smallcounter.com/vmap/1772817272/">Open Full Visitor Map</a>
+          <a href="https://smallcounter.com/map/">Powered by SmallCounter</a>
+        </div>
+      </div>
     </section>
 
     <p class="service-line"><strong>Service.</strong> Reviewer for CVPR, ECCV, ICRA, CoRL, IROS, ICLR, NeurIPS, RA-L, and IJCAI.</p>
