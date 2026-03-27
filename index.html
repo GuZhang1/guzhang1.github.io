@@ -282,14 +282,6 @@
       font-weight: 600;
     }
 
-    .pub-metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 12px;
-      align-items: center;
-    }
-
     .github-star-button {
       display: inline-flex;
       align-items: center;
@@ -298,6 +290,7 @@
       border-radius: 999px;
       overflow: hidden;
       box-shadow: inset 0 0 0 1px rgba(22, 79, 152, 0.08);
+      background: #eef4fb;
     }
 
     .github-star-button iframe {
@@ -321,33 +314,16 @@
       font-size: 0.95rem;
     }
 
-    .visitor-map-link {
-      display: block;
-    }
-
-    .visitor-map-image {
-      width: 100%;
-      height: auto;
-      border: 1px solid rgba(29, 111, 216, 0.14);
-      border-radius: 18px;
-      background: #f8fbff;
-      box-shadow: 0 14px 28px rgba(37, 58, 89, 0.08);
-    }
-
-    .visitor-map-actions {
+    .visitor-map-embed {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
+      justify-content: center;
+      min-height: 238px;
+      padding-top: 4px;
     }
 
-    .visitor-map-actions a {
-      padding: 8px 13px;
-      border-radius: 999px;
-      background: #eef4fb;
-      color: #164f98;
-      font-size: 0.92rem;
-      font-weight: 600;
+    .visitor-map-embed > div,
+    .visitor-map-embed > script {
+      max-width: 100%;
     }
 
     .footer {
@@ -462,8 +438,6 @@
               <a href="https://unidex-ai.github.io/assets/UniDex_Arxiv.pdf">Paper</a>
               <a href="https://github.com/unidex-ai/UniDex">Code</a>
               <a href="https://x.com/Gu__Zhang/status/2036501836371513736">Twitter</a>
-            </div>
-            <div class="pub-metrics">
               <span class="github-star-button">
                 <iframe
                   src="https://ghbtns.com/github-btn.html?user=unidex-ai&amp;repo=UniDex&amp;type=star&amp;count=true"
@@ -489,8 +463,6 @@
               <a href="https://arxiv.org/abs/2503.02881">Paper</a>
               <a href="https://github.com/xiaoxiaoxh/reactive_diffusion_policy">Code</a>
               <a href="https://x.com/HanXue012/status/1897671592429470086">Twitter</a>
-            </div>
-            <div class="pub-metrics">
               <span class="github-star-button">
                 <iframe
                   src="https://ghbtns.com/github-btn.html?user=xiaoxiaoxh&amp;repo=reactive_diffusion_policy&amp;type=star&amp;count=true"
@@ -517,8 +489,6 @@
               <a href="https://3d-diffusion-policy.github.io/2024_arXiv_DP3.pdf">Paper</a>
               <a href="https://github.com/YanjieZe/3D-Diffusion-Policy">Code</a>
               <a href="https://twitter.com/ZeYanjie/status/1765414787775963232">Twitter</a>
-            </div>
-            <div class="pub-metrics">
               <span class="github-star-button">
                 <iframe
                   src="https://ghbtns.com/github-btn.html?user=YanjieZe&amp;repo=3D-Diffusion-Policy&amp;type=star&amp;count=true"
@@ -544,8 +514,6 @@
               <a href="https://arxiv.org/pdf/2403.08716.pdf">Paper</a>
               <a href="https://github.com/Genesis-Embodied-AI/DiffTactile">Code</a>
               <a href="https://twitter.com/gan_chuang/status/1771268662353150183">Twitter</a>
-            </div>
-            <div class="pub-metrics">
               <span class="github-star-button">
                 <iframe
                   src="https://ghbtns.com/github-btn.html?user=Genesis-Embodied-AI&amp;repo=DiffTactile&amp;type=star&amp;count=true"
@@ -688,17 +656,12 @@
         <p>Geographic footprint of homepage visitors</p>
       </div>
       <div class="visitor-map-shell">
-        <p>This map starts collecting homepage visits after deployment and updates automatically as new visitors arrive.</p>
-        <a class="visitor-map-link" href="https://smallcounter.com/vmap/1772817272/">
-          <img
-            class="visitor-map-image"
-            src="https://smallcounter.com/map/view.php?type=180&amp;id=1772817272"
-            alt="Visitor map for guzhang1.github.io"
-            loading="lazy">
-        </a>
-        <div class="visitor-map-actions">
-          <a href="https://smallcounter.com/vmap/1772817272/">Open Full Visitor Map</a>
-          <a href="https://smallcounter.com/map/">Powered by SmallCounter</a>
+        <p>Visitor distribution map, using the same ClustrMaps-style widget as the reference homepage.</p>
+        <div class="visitor-map-embed">
+          <script
+            type="text/javascript"
+            id="clustrmaps"
+            src="https://cdn.clustrmaps.com/map_v2.js?cl=080808&amp;w=320&amp;t=tt&amp;d=guzhanghomepagevisitors2026&amp;co=ffffff&amp;cmo=0095ff&amp;cmn=ff5353&amp;ct=808080"></script>
         </div>
       </div>
     </section>
