@@ -298,31 +298,10 @@
       overflow: hidden;
     }
 
-    .visitor-map-shell {
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background:
-        linear-gradient(180deg, rgba(234, 243, 255, 0.9), rgba(255, 255, 255, 0.98)),
-        #ffffff;
-    }
-
-    .visitor-map-shell p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .visitor-map-embed {
-      padding-top: 4px;
-    }
-
-    .visitor-map-frame {
-      width: 100%;
-      height: 560px;
-      border: 1px solid rgba(29, 111, 216, 0.14);
-      border-radius: 18px;
-      background: #f8fbff;
+    .visitor-map-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 12px 0 4px;
     }
 
     .footer {
@@ -652,17 +631,9 @@
     <section class="panel section">
       <div class="section-header">
         <h2>Visitor Map</h2>
-        <p>Geographic footprint of homepage visitors</p>
       </div>
-      <div class="visitor-map-shell">
-        <p>Live visitor map with a clearer embedded view.</p>
-        <div class="visitor-map-embed">
-          <iframe
-            class="visitor-map-frame"
-            src="https://smallcounter.com/vmap/1772817272/"
-            title="Visitor map"
-            loading="lazy"></iframe>
-        </div>
+      <div class="visitor-map-wrapper">
+        <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=E2FMhuDmQorhfPWPK3-7yB1nwZmH8Bnkrt7ztE_b7lU"></script>
       </div>
     </section>
 
