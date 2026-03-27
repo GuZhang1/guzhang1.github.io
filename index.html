@@ -287,10 +287,9 @@
       align-items: center;
       min-height: 20px;
       padding: 0;
-      border-radius: 999px;
       overflow: hidden;
-      box-shadow: inset 0 0 0 1px rgba(22, 79, 152, 0.08);
-      background: #eef4fb;
+      background: transparent;
+      box-shadow: none;
     }
 
     .github-star-button iframe {
@@ -315,15 +314,15 @@
     }
 
     .visitor-map-embed {
-      display: flex;
-      justify-content: center;
-      min-height: 238px;
       padding-top: 4px;
     }
 
-    .visitor-map-embed > div,
-    .visitor-map-embed > script {
-      max-width: 100%;
+    .visitor-map-frame {
+      width: 100%;
+      height: 560px;
+      border: 1px solid rgba(29, 111, 216, 0.14);
+      border-radius: 18px;
+      background: #f8fbff;
     }
 
     .footer {
@@ -656,12 +655,13 @@
         <p>Geographic footprint of homepage visitors</p>
       </div>
       <div class="visitor-map-shell">
-        <p>Visitor distribution map, using the same ClustrMaps-style widget as the reference homepage.</p>
+        <p>Live visitor map with a clearer embedded view.</p>
         <div class="visitor-map-embed">
-          <script
-            type="text/javascript"
-            id="clustrmaps"
-            src="https://cdn.clustrmaps.com/map_v2.js?cl=080808&amp;w=320&amp;t=tt&amp;d=guzhanghomepagevisitors2026&amp;co=ffffff&amp;cmo=0095ff&amp;cmn=ff5353&amp;ct=808080"></script>
+          <iframe
+            class="visitor-map-frame"
+            src="https://smallcounter.com/vmap/1772817272/"
+            title="Visitor map"
+            loading="lazy"></iframe>
         </div>
       </div>
     </section>
