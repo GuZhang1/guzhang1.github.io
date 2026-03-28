@@ -569,7 +569,7 @@
       <div class="pub-list">
         <article class="pub-card featured">
           <div class="pub-image banner">
-            <video autoplay muted loop playsinline preload="none" poster="images/unidex.png" data-src="assets/videos/unidex-full-web.mp4" data-priority="high"></video>
+            <video autoplay muted loop playsinline preload="none" poster="images/unidex.png" data-src="assets/videos/unidex-full-web.mp4" data-priority="high" data-loop-end="28"></video>
           </div>
           <div>
             <h3 class="pub-title">UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos</h3>
@@ -622,7 +622,7 @@
 
         <article class="pub-card featured">
           <div class="pub-image standard">
-            <video autoplay muted loop playsinline preload="none" poster="images/dp3.jpg" data-src="assets/videos/dp3-web.mp4"></video>
+            <video autoplay muted loop playsinline preload="none" poster="images/dp3.jpg" data-src="assets/videos/dp3-web.mp4" data-loop-end="11.5"></video>
           </div>
           <div>
             <h3 class="pub-title">3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations</h3>
@@ -833,6 +833,31 @@
       video.play().catch(() => {});
     };
 
+    const setupVideoLoop = (video) => {
+      if (!video || video.dataset.loopBound === 'true') return;
+
+      const loopEnd = Number.parseFloat(video.dataset.loopEnd);
+      if (!Number.isFinite(loopEnd) || loopEnd <= 0) {
+        video.dataset.loopBound = 'true';
+        return;
+      }
+
+      const restartVideo = () => {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      };
+
+      video.addEventListener('timeupdate', () => {
+        const duration = Number.isFinite(video.duration) ? video.duration : loopEnd;
+        const effectiveLoopEnd = Math.min(loopEnd, duration);
+        if (video.currentTime >= effectiveLoopEnd) {
+          restartVideo();
+        }
+      });
+
+      video.dataset.loopBound = 'true';
+    };
+
     const videos = document.querySelectorAll('video[data-src]');
     const videoObserver = new IntersectionObserver((entries, currentObserver) => {
       entries.forEach(entry => {
@@ -843,6 +868,8 @@
     }, { rootMargin: '240px 0px' });
 
     videos.forEach(video => {
+      setupVideoLoop(video);
+
       video.addEventListener('canplay', () => {
         video.play().catch(() => {});
       }, { once: true });
