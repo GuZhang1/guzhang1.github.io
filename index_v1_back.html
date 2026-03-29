@@ -15,13 +15,7 @@
       --accent: #1d6fd8;
       --accent-soft: #eaf3ff;
       --highlight: #fff7d8;
-      --shadow: 0 8px 32px rgba(22, 37, 64, 0.07);
-      --shadow-hover: 0 12px 40px rgba(22, 37, 64, 0.13);
-      --radius: 16px;
-      --radius-sm: 12px;
-      --page-width: 1240px;
-      --pub-media-ratio: 16 / 9;
-      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow: 0 20px 45px rgba(22, 37, 64, 0.08);
     }
 
     * {
@@ -30,15 +24,14 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 72px;
     }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(41, 111, 216, 0.06), transparent 28%),
+        radial-gradient(circle at top left, rgba(41, 111, 216, 0.08), transparent 28%),
         linear-gradient(180deg, #f7faff 0%, #f4f7fb 100%);
       line-height: 1.7;
     }
@@ -46,7 +39,6 @@
     a {
       color: var(--accent);
       text-decoration: none;
-      transition: color var(--transition);
     }
 
     a:hover {
@@ -58,80 +50,23 @@
       max-width: 100%;
     }
 
-    /* ─── Fixed Nav ─── */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 0 24px;
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(217, 227, 239, 0.5);
-      transition: box-shadow var(--transition);
-    }
-
-    .nav.scrolled {
-      box-shadow: 0 2px 20px rgba(22, 37, 64, 0.08);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: var(--page-width);
-      margin: 0 auto;
-      height: 56px;
-    }
-
-    .nav-brand {
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--text);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 8px;
-    }
-
-    .nav-links a {
-      padding: 6px 14px;
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: all var(--transition);
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--accent);
-      background: var(--accent-soft);
-    }
-
-    /* ─── Page ─── */
     .page {
-      width: min(var(--page-width), calc(100% - 32px));
-      margin: 80px auto 56px;
+      width: min(1120px, calc(100% - 32px));
+      margin: 32px auto 56px;
     }
 
-    /* ─── Panel ─── */
     .panel {
       background: var(--card);
-      border: 1px solid rgba(217, 227, 239, 0.7);
-      border-radius: var(--radius);
+      border: 1px solid rgba(217, 227, 239, 0.9);
+      border-radius: 28px;
       box-shadow: var(--shadow);
     }
 
-    /* ─── Hero ─── */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.95fr);
-      gap: 32px;
-      padding: 36px;
+      grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.85fr);
+      gap: 28px;
+      padding: 34px;
       align-items: center;
       overflow: hidden;
     }
@@ -165,20 +100,12 @@
     .link-chip {
       display: inline-flex;
       align-items: center;
-      padding: 8px 14px;
+      padding: 9px 14px;
       border-radius: 999px;
       background: var(--accent-soft);
       color: var(--accent);
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       font-weight: 600;
-      transition: all var(--transition);
-    }
-
-    .link-chip:hover {
-      background: var(--accent);
-      color: #fff;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(29, 111, 216, 0.25);
     }
 
     .link-chip.secondary {
@@ -186,40 +113,34 @@
       color: var(--text);
     }
 
-    .link-chip.secondary:hover {
-      background: #e4e9f0;
-      color: var(--text);
-      box-shadow: 0 4px 12px rgba(22, 37, 64, 0.1);
-    }
-
     .portrait-card {
       position: relative;
       padding: 14px;
-      border-radius: var(--radius);
+      border-radius: 24px;
       background:
-        linear-gradient(180deg, rgba(29, 111, 216, 0.1), rgba(255, 255, 255, 0.88)),
+        linear-gradient(180deg, rgba(29, 111, 216, 0.13), rgba(255, 255, 255, 0.88)),
         #ffffff;
-      border: 1px solid rgba(29, 111, 216, 0.1);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .portrait-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(29, 111, 216, 0.12);
+      border: 1px solid rgba(29, 111, 216, 0.12);
     }
 
     .portrait-card img {
       width: 100%;
       aspect-ratio: 4 / 5;
       object-fit: cover;
-      border-radius: var(--radius-sm);
-      box-shadow: 0 12px 24px rgba(34, 57, 92, 0.1);
+      border-radius: 18px;
+      box-shadow: 0 20px 32px rgba(34, 57, 92, 0.14);
     }
 
-    /* ─── Sections ─── */
+    .portrait-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
     .section {
       margin-top: 24px;
-      padding: 30px 34px;
+      padding: 26px 28px;
     }
 
     .section-header {
@@ -227,13 +148,13 @@
       align-items: baseline;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .section h2 {
       margin: 0;
       font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       font-weight: 600;
       letter-spacing: -0.02em;
     }
@@ -242,10 +163,9 @@
     .section > p {
       margin: 0;
       color: var(--muted);
-      font-size: 0.93rem;
+      font-size: 0.95rem;
     }
 
-    /* ─── News ─── */
     .news-list,
     .plain-list {
       margin: 0;
@@ -257,38 +177,27 @@
       margin-bottom: 8px;
     }
 
-    /* ─── Publications ─── */
     .pub-list {
       display: grid;
-      gap: 22px;
+      gap: 20px;
     }
 
     .pub-card {
       display: grid;
-      grid-template-columns: clamp(360px, 36vw, 500px) minmax(0, 1fr);
-      gap: 28px;
-      padding: 24px;
+      grid-template-columns: clamp(300px, 31vw, 390px) minmax(0, 1fr);
+      gap: 26px;
+      padding: 20px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: 24px;
       background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
       align-items: start;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .pub-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
     }
 
     .pub-card.featured {
       background:
-        linear-gradient(180deg, rgba(255, 247, 216, 0.7), rgba(255, 255, 255, 0.98)),
+        linear-gradient(180deg, rgba(255, 247, 216, 0.88), rgba(255, 255, 255, 0.98)),
         #ffffff;
-      border-color: #eed994;
-    }
-
-    .pub-card.featured:hover {
-      box-shadow: 0 12px 40px rgba(200, 170, 60, 0.12);
+      border-color: #f0df9c;
     }
 
     .pub-image {
@@ -296,61 +205,44 @@
       align-items: center;
       justify-content: center;
       align-self: center;
-      width: 100%;
-      aspect-ratio: var(--pub-media-ratio);
-      overflow: hidden;
-      border-radius: var(--radius-sm);
-      background:
-        radial-gradient(circle at top left, rgba(29, 111, 216, 0.08), transparent 55%),
-        #f5f8fc;
-    }
-
-    .pub-image img,
-    .pub-image video {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-position: center center;
-      margin: 0 auto;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(29, 111, 216, 0.08);
-      background: #f5f8fc;
-      box-shadow: 0 8px 20px rgba(37, 58, 89, 0.08);
-      transition: transform var(--transition);
-    }
-
-    .pub-card:hover .pub-image img,
-    .pub-card:hover .pub-image video {
-      transform: scale(1.03);
     }
 
     .pub-image img {
+      width: 100%;
+      height: auto;
+      display: block;
       object-fit: cover;
+      object-position: center center;
+      margin: 0 auto;
+      border-radius: 16px;
+      border: 1px solid rgba(29, 111, 216, 0.1);
+      background: #f5f8fc;
+      box-shadow: 0 14px 28px rgba(37, 58, 89, 0.12);
     }
 
-    .pub-image video {
-      object-fit: contain;
-      background:
-        radial-gradient(circle at top left, rgba(29, 111, 216, 0.05), transparent 55%),
-        #eef3f9;
+    .pub-image.banner img {
+      aspect-ratio: 2.2 / 1;
     }
 
-    .pub-image.banner img,
-    .pub-image.banner video,
-    .pub-image.wide img,
-    .pub-image.wide video,
-    .pub-image.standard img,
-    .pub-image.standard video,
-    .pub-image.square img,
-    .pub-image.square video,
-    .pub-image.tall img,
-    .pub-image.tall video {
-      aspect-ratio: var(--pub-media-ratio);
+    .pub-image.wide img {
+      aspect-ratio: 1.9 / 1;
+    }
+
+    .pub-image.standard img {
+      aspect-ratio: 1.6 / 1;
+    }
+
+    .pub-image.square img {
+      aspect-ratio: 1 / 1;
+    }
+
+    .pub-image.tall img {
+      aspect-ratio: 1.2 / 1;
     }
 
     .pub-title {
       margin: 0 0 8px;
-      font-size: 1.12rem;
+      font-size: 1.15rem;
       line-height: 1.4;
       font-weight: 700;
     }
@@ -358,11 +250,11 @@
     .meta,
     .authors,
     .abstract {
-      margin: 0 0 8px;
+      margin: 0 0 9px;
     }
 
     .authors {
-      font-size: 0.96rem;
+      font-size: 0.98rem;
     }
 
     .meta {
@@ -377,24 +269,17 @@
     .pub-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
+      gap: 10px;
+      margin-top: 12px;
     }
 
     .pub-links a {
-      padding: 6px 12px;
+      padding: 7px 12px;
       border-radius: 999px;
       background: #eef4fb;
       color: #164f98;
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       font-weight: 600;
-      transition: all var(--transition);
-    }
-
-    .pub-links a:hover {
-      background: var(--accent);
-      color: #fff;
-      transform: translateY(-1px);
     }
 
     .github-star-button {
@@ -413,7 +298,6 @@
       overflow: hidden;
     }
 
-    /* ─── Footer ─── */
     .footer {
       margin-top: 20px;
       text-align: right;
@@ -422,13 +306,12 @@
     }
 
     .service-line {
-      margin: 20px 4px 0;
+      margin: 16px 4px 0;
       color: var(--muted);
-      font-size: 0.96rem;
+      font-size: 0.98rem;
       text-align: center;
     }
 
-    /* ─── Responsive ─── */
     @media (max-width: 920px) {
       .hero,
       .pub-card {
@@ -436,7 +319,7 @@
       }
 
       .page {
-        width: min(100% - 20px, var(--page-width));
+        width: min(100% - 20px, 1120px);
       }
 
       .hero {
@@ -446,85 +329,28 @@
       .section {
         padding: 22px 20px;
       }
-
-      .nav-brand {
-        font-size: 0.95rem;
-      }
-
-      .nav-links a {
-        padding: 6px 10px;
-        font-size: 0.84rem;
-      }
-
-      .pub-card {
-        gap: 18px;
-        padding: 20px;
-      }
-
-      .pub-image {
-        aspect-ratio: 16 / 10;
-      }
     }
 
     @media (max-width: 600px) {
       .page {
-        margin-top: 68px;
+        margin-top: 18px;
         margin-bottom: 32px;
       }
 
       .hero-copy h1 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
       }
 
       .section-header {
         flex-direction: column;
         align-items: flex-start;
       }
-
-      .nav-inner {
-        height: 48px;
-      }
-
-      .nav-links {
-        gap: 4px;
-      }
-
-      .nav-links a {
-        padding: 5px 8px;
-        font-size: 0.8rem;
-      }
-
-      .section {
-        padding: 20px 16px;
-      }
-
-      .pub-card {
-        padding: 16px;
-      }
-
-      .pub-image {
-        aspect-ratio: 4 / 3;
-      }
     }
   </style>
 </head>
 <body>
-
-  <!-- ─── Fixed Navigation ─── -->
-  <nav class="nav" id="navbar">
-    <div class="nav-inner">
-      <span class="nav-brand">Gu Zhang</span>
-      <div class="nav-links">
-        <a href="#home" class="active">Home</a>
-        <a href="#news">News</a>
-        <a href="#publications">Publications</a>
-        <a href="#awards">Awards</a>
-      </div>
-    </div>
-  </nav>
-
   <main class="page">
-    <section class="panel hero" id="home">
+    <section class="panel hero">
       <div class="hero-copy">
         <h1>Gu Zhang</h1>
         <p class="subtitle">Ph.D. student in Computer Science, IIIS, Tsinghua University</p>
@@ -540,11 +366,12 @@
         </div>
       </div>
       <div class="portrait-card">
-        <img src="images/guzhang-graduate.jpg" alt="Portrait of Gu Zhang" loading="eager" fetchpriority="high" decoding="async">
+        <img src="images/guzhang-graduate.jpg" alt="Portrait of Gu Zhang">
+
       </div>
     </section>
 
-    <section class="panel section" id="news">
+    <section class="panel section">
       <div class="section-header">
         <h2>News</h2>
         <p>Selected recent updates</p>
@@ -557,20 +384,23 @@
         <li>[Jul. 2024]: <strong>DiffTactile</strong> won the <strong style="color:#b3261e;">Best Paper Award</strong> in the Noosphere workshop at RSS 2024.</li>
         <li>[Jul. 2024]: <strong>Robo-ABC</strong> is accepted by ECCV 2024.</li>
         <li>[May. 2024]: <strong>3D Diffusion Policy</strong> is accepted by RSS 2024.</li>
+        <!-- <li>[Jan. 2024]: <strong>ArrayBot</strong> is accepted by ICRA 2024.</li>
+        <li>[Jan. 2024]: Two papers are accepted by ICLR 2024, one is <strong>Spotlight</strong>.</li>
+        <li>[Sep. 2023]: One paper is accepted by NeurIPS 2023.</li>
+        <li>[Jun. 2023]: One paper, <strong>Flexible Handover</strong>, is accepted by IROS 2023.</li>
+        <li>[Apr. 2023]: One paper, <strong>IOT-CL</strong>, is accepted by ICML 2023.</li> -->
       </ul>
     </section>
 
-    <section class="panel section" id="publications">
+    <section class="panel section">
       <div class="section-header">
         <h2>Publications</h2>
-        <p><sup>*</sup> indicates equal contribution, <sup>&dagger;</sup> indicates equal advising. Representative papers are highlighted.</p>
+        <p><sup>*</sup> indicates equal contribution, <sup>†</sup> indicates equal advising. Representative papers are highlighted.</p>
       </div>
 
       <div class="pub-list">
         <article class="pub-card featured">
-          <div class="pub-image banner">
-            <video autoplay muted loop playsinline preload="none" poster="images/unidex.png" data-src="assets/videos/unidex-full-web.mp4" data-priority="high" data-loop-end="28"></video>
-          </div>
+          <div class="pub-image banner"><img src="images/unidex.png" alt="UniDex cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos</h3>
             <p class="authors"><strong>Gu Zhang</strong>, Qicheng Xu, Haozhe Zhang, Jianhan Ma, Long He, Yiming Bao, Zeyu Ping, Zhecheng Yuan, Chenhao Lu, Chengbo Yuan, Tianhai Liang, Xiaoyu Tian, Maanping Shao, Feihong Zhang, Mingyu Ding, Yang Gao, Hao Zhao, Hang Zhao, Huazhe Xu</p>
@@ -594,12 +424,10 @@
         </article>
 
         <article class="pub-card featured">
-          <div class="pub-image wide">
-            <video autoplay muted loop playsinline preload="none" poster="images/RDP.jpg" data-src="assets/videos/reactive-diffusion-policy-web.mp4"></video>
-          </div>
+          <div class="pub-image wide"><img src="images/RDP.jpg" alt="Reactive Diffusion Policy cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation</h3>
-            <p class="authors">Han Xue<sup>*</sup>, Jieji Ren<sup>*</sup>, Wendi Chen<sup>*</sup>, <strong>Gu Zhang</strong>, Yuan Fang, Guoying Gu, Huazhe Xu<sup>&dagger;</sup>, and Cewu Lu<sup>&dagger;</sup></p>
+            <p class="authors">Han Xue<sup>*</sup>, Jieji Ren<sup>*</sup>, Wendi Chen<sup>*</sup>, <strong>Gu Zhang</strong>, Yuan Fang, Guoying Gu, Huazhe Xu<sup>†</sup>, and Cewu Lu<sup>†</sup></p>
             <p class="meta"><em><strong style="color:#b3261e;">Best Student Paper Finalist</strong>, Robotics: Science and Systems (RSS)</em>, 2025</p>
             <p class="meta"><em><strong style="color:#b3261e;">Best Paper Award</strong>, ICRA Beyond Pick and Place Workshop</em>, 2025</p>
             <div class="pub-links">
@@ -620,10 +448,10 @@
           </div>
         </article>
 
+        
+
         <article class="pub-card featured">
-          <div class="pub-image standard">
-            <video autoplay muted loop playsinline preload="none" poster="images/dp3.jpg" data-src="assets/videos/dp3-web.mp4" data-loop-end="11.5"></video>
-          </div>
+          <div class="pub-image standard"><img src="images/dp3.jpg" alt="3D Diffusion Policy cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations</h3>
             <p class="authors">Yanjie Ze<sup>*</sup>, <strong>Gu Zhang<sup>*</sup></strong>, Kangning Zhang, Chenyuan Hu, Muhan Wang, and Huazhe Xu</p>
@@ -647,7 +475,7 @@
         </article>
 
         <article class="pub-card featured">
-          <div class="pub-image standard"><img src="https://difftactile.github.io/static/gifs/surface.gif" alt="DiffTactile demo" loading="lazy" decoding="async"></div>
+          <div class="pub-image standard"><img src="images/iclr.png" alt="DIFFTACTILE cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">DIFFTACTILE: A Physics-based Differentiable Tactile Simulator for Contact-Rich Robotic Manipulation</h3>
             <p class="authors">Zilin Si<sup>*</sup>, <strong>Gu Zhang<sup>*</sup></strong>, Qingwei Ben<sup>*</sup>, Branden Romero, Xian Zhou, Chao Liu, and Chuang Gan</p>
@@ -672,9 +500,7 @@
         </article>
 
         <article class="pub-card">
-          <div class="pub-image standard">
-            <video autoplay muted loop playsinline preload="none" poster="images/maniwhere.jpg" data-src="assets/videos/maniwhere-web.mp4"></video>
-          </div>
+          <div class="pub-image standard"><img src="images/maniwhere.jpg" alt="Maniwhere cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">Learning to Manipulate Anywhere: A Visual Generalizable Framework for Reinforcement Learning</h3>
             <p class="authors">Zhecheng Yuan<sup>*</sup>, Tianming Wei<sup>*</sup>, Shuiqi Cheng, <strong>Gu Zhang</strong>, Yuanpei Chen, and Huazhe Xu</p>
@@ -689,7 +515,7 @@
         </article>
 
         <article class="pub-card">
-          <div class="pub-image standard"><img src="images/corl.jpeg" alt="ThinShellLab cover" loading="lazy" decoding="async"></div>
+          <div class="pub-image standard"><img src="images/corl.jpeg" alt="ThinShellLab cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">Thin-Shell Object Manipulations With Differentiable Physics Simulations</h3>
             <p class="authors">Yian Wang<sup>*</sup>, Juntian Zheng<sup>*</sup>, Zhehuan Chen, Xian Zhou, <strong>Gu Zhang</strong>, Chao Liu, and Chuang Gan</p>
@@ -704,7 +530,7 @@
         </article>
 
         <article class="pub-card">
-          <div class="pub-image standard"><img src="images/roboabc.jpg" alt="Robo-ABC cover" loading="lazy" decoding="async"></div>
+          <div class="pub-image standard"><img src="images/roboabc.jpg" alt="Robo-ABC cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">Robo-ABC: Affordance Generalization Beyond Categories via Semantic Correspondence for Robot Manipulation</h3>
             <p class="authors">Yuanchen Ju<sup>*</sup>, Kaizhe Hu<sup>*</sup>, Guowei Zhang, <strong>Gu Zhang</strong>, Mingrun Jiang, and Huazhe Xu</p>
@@ -719,7 +545,7 @@
         </article>
 
         <article class="pub-card">
-          <div class="pub-image standard"><img src="images/arraybot.jpeg" alt="ArrayBot cover" loading="lazy" decoding="async"></div>
+          <div class="pub-image standard"><img src="images/arraybot.jpeg" alt="ArrayBot cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">ArrayBot: Reinforcement Learning for Generalizable Distributed Manipulation through Touch</h3>
             <p class="authors">Zhengrong Xue<sup>*</sup>, Han Zhang<sup>*</sup>, Jingwen Chen, Zhengmao He, Yuanchen Ju, Changyi Lin, <strong>Gu Zhang</strong>, and Huazhe Xu</p>
@@ -734,7 +560,7 @@
         </article>
 
         <article class="pub-card">
-          <div class="pub-image wide"><img src="images/iros2023.png" alt="Flexible Handover cover" loading="lazy" decoding="async"></div>
+          <div class="pub-image wide"><img src="images/iros2023.png" alt="Flexible Handover cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">Flexible Handover with Real-Time Robust Dynamic Grasp Trajectory Generation</h3>
             <p class="authors"><strong>Gu Zhang</strong>, Hao-shu Fang, Hongjie Fang, and Cewu Lu</p>
@@ -747,7 +573,7 @@
         </article>
 
         <article class="pub-card">
-          <div class="pub-image wide"><img src="images/icml2023.jpeg" alt="IOT-CL cover" loading="lazy" decoding="async"></div>
+          <div class="pub-image wide"><img src="images/icml2023.jpeg" alt="IOT-CL cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">Understanding and Generalizing Contrastive Learning from the Inverse Optimal Transport Perspective</h3>
             <p class="authors">Liangliang Shi, <strong>Gu Zhang</strong>, Haoyu Zhen, and Junchi Yan</p>
@@ -760,7 +586,7 @@
         </article>
 
         <article class="pub-card">
-          <div class="pub-image standard"><img src="images/nips.jpeg" alt="Relative Entropic Optimal Transport cover" loading="lazy" decoding="async"></div>
+          <div class="pub-image standard"><img src="images/nips.jpeg" alt="Relative Entropic Optimal Transport cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">Relative Entropic Optimal Transport: a Prior-aware Matching Perspective to Unbalanced Classification</h3>
             <p class="authors">Liangliang Shi, Haoyu Zhen, <strong>Gu Zhang</strong>, and Junchi Yan</p>
@@ -774,113 +600,31 @@
       </div>
     </section>
 
-    <section class="panel section" id="awards">
+    <section class="panel section">
       <div class="section-header">
         <h2>Awards</h2>
         <p>Selected honors</p>
       </div>
       <ul class="plain-list">
-        <li>2025: <strong>Best Student Paper Award Finalist, RSS 2025</strong></li>
-        <li>2025: <strong>Best Paper Award, Beyond Pick and Place workshop at ICRA 2025</strong></li>
-        <li>2024: <strong>Best Paper Award,Noosphere workshop at RSS 2024</strong></li>
+        <li>2025: <strong>Best Paper Award in Beyond Pick and Place workshop at ICRA 2025</strong></li>
+        <li>2024: <strong>Best Paper Award in Noosphere workshop at RSS 2024</strong></li>
         <li>2024: Best Bachelor Thesis Award of Shanghai Jiao Tong University</li>
         <li>2024: Shanghai Outstanding Graduates</li>
-        <!-- <li>2024: Zhiyuan Outstanding Scholarship (Top 30 winners in Zhiyuan Honor College, RMB 20,000)</li> -->
-        <li>2023: <strong>SenseTime Scholarship</strong> (Top 30 undergraduate AI researchers nationwide)</li>
-        <!-- <li>2023: Shanghai Scholarship (Top 0.2% in Shanghai, RMB 8,000)</li>
+        <li>2024: Zhiyuan Outstanding Scholarship (Top 30 winners in Zhiyuan Honor College, RMB 20,000)</li>
+        <li>2023: <strong>SenseTime Scholarship</strong> (Top 30 undergraduate AI researchers nationwide, RMB 20,000)</li>
+        <li>2023: Shanghai Scholarship (Top 0.2% in Shanghai, RMB 8,000)</li>
         <li>2022: <strong>National Scholarship</strong> (Top 0.2% nationwide, RMB 8,000)</li>
-        <li>2022: Hanying Juhua Scholarship (Top 15 winners in Zhiyuan Honor College, RMB 15,000)</li> -->
-        <li>2021, 2022: <strong>National Scholarship</strong> (Highest Honor for undergraduates in China)</li>
-        <!-- <li>2021, 2022: A-level Merit Scholarship (Top 1% SJTU, RMB 1,500)</li>
+        <li>2022: Hanying Juhua Scholarship (Top 15 winners in Zhiyuan Honor College, RMB 15,000)</li>
+        <li>2021: <strong>National Scholarship</strong> (Top 0.2% nationwide, RMB 8,000)</li>
+        <li>2021, 2022: A-level Merit Scholarship (Top 1% SJTU, RMB 1,500)</li>
         <li>2021, 2022: Merit Student (Top 5% SJTU)</li>
-        <li>2020, 2021, 2022, 2023: Zhiyuan Honor Scholarship (Top 5% SJTU, RMB 5,000)</li> -->
+        <li>2020, 2021, 2022, 2023: Zhiyuan Honor Scholarship (Top 5% SJTU, RMB 5,000)</li>
       </ul>
     </section>
 
-    <p class="service-line"><strong>Service.</strong> Reviewer for CVPR, ECCV, ICRA, CoRL, IROS, ICLR, NeurIPS, RA-L, TASE.</p>
+    <p class="service-line"><strong>Service.</strong> Reviewer for CVPR, ECCV, ICRA, CoRL, IROS, ICLR, NeurIPS, RA-L, and IJCAI.</p>
+
+    <!-- <p class="footer">Design adapted from your original content and structure. Original source inspiration: <a href="https://jonbarron.info/">Jon Barron's website</a>.</p> -->
   </main>
-
-  <script>
-    // Nav scroll shadow
-    const nav = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 10);
-    }, { passive: true });
-
-    // Active nav link on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.classList.toggle('active',
-              link.getAttribute('href') === '#' + entry.target.id);
-          });
-        }
-      });
-    }, { rootMargin: '-20% 0px -75% 0px' });
-
-    sections.forEach(section => observer.observe(section));
-
-    // Lazy-load publication videos so the page shows local posters first.
-    const loadVideo = (video) => {
-      if (!video || video.dataset.loaded === 'true') return;
-      video.src = video.dataset.src;
-      video.preload = video.dataset.priority === 'high' ? 'auto' : 'metadata';
-      video.dataset.loaded = 'true';
-      video.load();
-      video.play().catch(() => {});
-    };
-
-    const setupVideoLoop = (video) => {
-      if (!video || video.dataset.loopBound === 'true') return;
-
-      const loopEnd = Number.parseFloat(video.dataset.loopEnd);
-      if (!Number.isFinite(loopEnd) || loopEnd <= 0) {
-        video.dataset.loopBound = 'true';
-        return;
-      }
-
-      const restartVideo = () => {
-        video.currentTime = 0;
-        video.play().catch(() => {});
-      };
-
-      video.addEventListener('timeupdate', () => {
-        const duration = Number.isFinite(video.duration) ? video.duration : loopEnd;
-        const effectiveLoopEnd = Math.min(loopEnd, duration);
-        if (video.currentTime >= effectiveLoopEnd) {
-          restartVideo();
-        }
-      });
-
-      video.dataset.loopBound = 'true';
-    };
-
-    const videos = document.querySelectorAll('video[data-src]');
-    const videoObserver = new IntersectionObserver((entries, currentObserver) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        loadVideo(entry.target);
-        currentObserver.unobserve(entry.target);
-      });
-    }, { rootMargin: '240px 0px' });
-
-    videos.forEach(video => {
-      setupVideoLoop(video);
-
-      video.addEventListener('canplay', () => {
-        video.play().catch(() => {});
-      }, { once: true });
-
-      if (video.dataset.priority === 'high') {
-        loadVideo(video);
-      } else {
-        videoObserver.observe(video);
-      }
-    });
-  </script>
 </body>
 </html>

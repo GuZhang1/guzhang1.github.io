@@ -19,8 +19,6 @@
       --shadow-hover: 0 12px 40px rgba(22, 37, 64, 0.13);
       --radius: 16px;
       --radius-sm: 12px;
-      --page-width: 1240px;
-      --pub-media-ratio: 16 / 9;
       --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -81,7 +79,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: var(--page-width);
+      max-width: 1120px;
       margin: 0 auto;
       height: 56px;
     }
@@ -114,7 +112,7 @@
 
     /* ─── Page ─── */
     .page {
-      width: min(var(--page-width), calc(100% - 32px));
+      width: min(1120px, calc(100% - 32px));
       margin: 80px auto 56px;
     }
 
@@ -129,9 +127,9 @@
     /* ─── Hero ─── */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.95fr);
-      gap: 32px;
-      padding: 36px;
+      grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.85fr);
+      gap: 28px;
+      padding: 34px;
       align-items: center;
       overflow: hidden;
     }
@@ -194,7 +192,7 @@
 
     .portrait-card {
       position: relative;
-      padding: 14px;
+      padding: 12px;
       border-radius: var(--radius);
       background:
         linear-gradient(180deg, rgba(29, 111, 216, 0.1), rgba(255, 255, 255, 0.88)),
@@ -219,7 +217,7 @@
     /* ─── Sections ─── */
     .section {
       margin-top: 24px;
-      padding: 30px 34px;
+      padding: 28px 30px;
     }
 
     .section-header {
@@ -260,14 +258,14 @@
     /* ─── Publications ─── */
     .pub-list {
       display: grid;
-      gap: 22px;
+      gap: 18px;
     }
 
     .pub-card {
       display: grid;
-      grid-template-columns: clamp(360px, 36vw, 500px) minmax(0, 1fr);
-      gap: 28px;
-      padding: 24px;
+      grid-template-columns: clamp(280px, 30vw, 380px) minmax(0, 1fr);
+      gap: 24px;
+      padding: 20px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
@@ -296,20 +294,15 @@
       align-items: center;
       justify-content: center;
       align-self: center;
-      width: 100%;
-      aspect-ratio: var(--pub-media-ratio);
       overflow: hidden;
       border-radius: var(--radius-sm);
-      background:
-        radial-gradient(circle at top left, rgba(29, 111, 216, 0.08), transparent 55%),
-        #f5f8fc;
     }
 
-    .pub-image img,
-    .pub-image video {
+    .pub-image img {
       width: 100%;
-      height: 100%;
+      height: auto;
       display: block;
+      object-fit: cover;
       object-position: center center;
       margin: 0 auto;
       border-radius: var(--radius-sm);
@@ -319,33 +312,28 @@
       transition: transform var(--transition);
     }
 
-    .pub-card:hover .pub-image img,
-    .pub-card:hover .pub-image video {
+    .pub-card:hover .pub-image img {
       transform: scale(1.03);
     }
 
-    .pub-image img {
-      object-fit: cover;
+    .pub-image.banner img {
+      aspect-ratio: 2.2 / 1;
     }
 
-    .pub-image video {
-      object-fit: contain;
-      background:
-        radial-gradient(circle at top left, rgba(29, 111, 216, 0.05), transparent 55%),
-        #eef3f9;
+    .pub-image.wide img {
+      aspect-ratio: 1.9 / 1;
     }
 
-    .pub-image.banner img,
-    .pub-image.banner video,
-    .pub-image.wide img,
-    .pub-image.wide video,
-    .pub-image.standard img,
-    .pub-image.standard video,
-    .pub-image.square img,
-    .pub-image.square video,
-    .pub-image.tall img,
-    .pub-image.tall video {
-      aspect-ratio: var(--pub-media-ratio);
+    .pub-image.standard img {
+      aspect-ratio: 1.6 / 1;
+    }
+
+    .pub-image.square img {
+      aspect-ratio: 1 / 1;
+    }
+
+    .pub-image.tall img {
+      aspect-ratio: 1.2 / 1;
     }
 
     .pub-title {
@@ -371,7 +359,7 @@
 
     .abstract {
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.93rem;
     }
 
     .pub-links {
@@ -436,7 +424,7 @@
       }
 
       .page {
-        width: min(100% - 20px, var(--page-width));
+        width: min(100% - 20px, 1120px);
       }
 
       .hero {
@@ -454,15 +442,6 @@
       .nav-links a {
         padding: 6px 10px;
         font-size: 0.84rem;
-      }
-
-      .pub-card {
-        gap: 18px;
-        padding: 20px;
-      }
-
-      .pub-image {
-        aspect-ratio: 16 / 10;
       }
     }
 
@@ -492,18 +471,6 @@
       .nav-links a {
         padding: 5px 8px;
         font-size: 0.8rem;
-      }
-
-      .section {
-        padding: 20px 16px;
-      }
-
-      .pub-card {
-        padding: 16px;
-      }
-
-      .pub-image {
-        aspect-ratio: 4 / 3;
       }
     }
   </style>
@@ -540,7 +507,7 @@
         </div>
       </div>
       <div class="portrait-card">
-        <img src="images/guzhang-graduate.jpg" alt="Portrait of Gu Zhang" loading="eager" fetchpriority="high" decoding="async">
+        <img src="images/guzhang-graduate.jpg" alt="Portrait of Gu Zhang">
       </div>
     </section>
 
@@ -568,9 +535,7 @@
 
       <div class="pub-list">
         <article class="pub-card featured">
-          <div class="pub-image banner">
-            <video autoplay muted loop playsinline preload="none" poster="images/unidex.png" data-src="assets/videos/unidex-full-web.mp4" data-priority="high" data-loop-end="28"></video>
-          </div>
+          <div class="pub-image banner"><img src="images/unidex.png" alt="UniDex cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos</h3>
             <p class="authors"><strong>Gu Zhang</strong>, Qicheng Xu, Haozhe Zhang, Jianhan Ma, Long He, Yiming Bao, Zeyu Ping, Zhecheng Yuan, Chenhao Lu, Chengbo Yuan, Tianhai Liang, Xiaoyu Tian, Maanping Shao, Feihong Zhang, Mingyu Ding, Yang Gao, Hao Zhao, Hang Zhao, Huazhe Xu</p>
@@ -594,9 +559,7 @@
         </article>
 
         <article class="pub-card featured">
-          <div class="pub-image wide">
-            <video autoplay muted loop playsinline preload="none" poster="images/RDP.jpg" data-src="assets/videos/reactive-diffusion-policy-web.mp4"></video>
-          </div>
+          <div class="pub-image wide"><img src="images/RDP.jpg" alt="Reactive Diffusion Policy cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation</h3>
             <p class="authors">Han Xue<sup>*</sup>, Jieji Ren<sup>*</sup>, Wendi Chen<sup>*</sup>, <strong>Gu Zhang</strong>, Yuan Fang, Guoying Gu, Huazhe Xu<sup>&dagger;</sup>, and Cewu Lu<sup>&dagger;</sup></p>
@@ -621,9 +584,7 @@
         </article>
 
         <article class="pub-card featured">
-          <div class="pub-image standard">
-            <video autoplay muted loop playsinline preload="none" poster="images/dp3.jpg" data-src="assets/videos/dp3-web.mp4" data-loop-end="11.5"></video>
-          </div>
+          <div class="pub-image standard"><img src="images/dp3.jpg" alt="3D Diffusion Policy cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations</h3>
             <p class="authors">Yanjie Ze<sup>*</sup>, <strong>Gu Zhang<sup>*</sup></strong>, Kangning Zhang, Chenyuan Hu, Muhan Wang, and Huazhe Xu</p>
@@ -647,7 +608,7 @@
         </article>
 
         <article class="pub-card featured">
-          <div class="pub-image standard"><img src="https://difftactile.github.io/static/gifs/surface.gif" alt="DiffTactile demo" loading="lazy" decoding="async"></div>
+          <div class="pub-image standard"><img src="images/iclr.png" alt="DIFFTACTILE cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">DIFFTACTILE: A Physics-based Differentiable Tactile Simulator for Contact-Rich Robotic Manipulation</h3>
             <p class="authors">Zilin Si<sup>*</sup>, <strong>Gu Zhang<sup>*</sup></strong>, Qingwei Ben<sup>*</sup>, Branden Romero, Xian Zhou, Chao Liu, and Chuang Gan</p>
@@ -672,9 +633,7 @@
         </article>
 
         <article class="pub-card">
-          <div class="pub-image standard">
-            <video autoplay muted loop playsinline preload="none" poster="images/maniwhere.jpg" data-src="assets/videos/maniwhere-web.mp4"></video>
-          </div>
+          <div class="pub-image standard"><img src="images/maniwhere.jpg" alt="Maniwhere cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">Learning to Manipulate Anywhere: A Visual Generalizable Framework for Reinforcement Learning</h3>
             <p class="authors">Zhecheng Yuan<sup>*</sup>, Tianming Wei<sup>*</sup>, Shuiqi Cheng, <strong>Gu Zhang</strong>, Yuanpei Chen, and Huazhe Xu</p>
@@ -689,7 +648,7 @@
         </article>
 
         <article class="pub-card">
-          <div class="pub-image standard"><img src="images/corl.jpeg" alt="ThinShellLab cover" loading="lazy" decoding="async"></div>
+          <div class="pub-image standard"><img src="images/corl.jpeg" alt="ThinShellLab cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">Thin-Shell Object Manipulations With Differentiable Physics Simulations</h3>
             <p class="authors">Yian Wang<sup>*</sup>, Juntian Zheng<sup>*</sup>, Zhehuan Chen, Xian Zhou, <strong>Gu Zhang</strong>, Chao Liu, and Chuang Gan</p>
@@ -704,7 +663,7 @@
         </article>
 
         <article class="pub-card">
-          <div class="pub-image standard"><img src="images/roboabc.jpg" alt="Robo-ABC cover" loading="lazy" decoding="async"></div>
+          <div class="pub-image standard"><img src="images/roboabc.jpg" alt="Robo-ABC cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">Robo-ABC: Affordance Generalization Beyond Categories via Semantic Correspondence for Robot Manipulation</h3>
             <p class="authors">Yuanchen Ju<sup>*</sup>, Kaizhe Hu<sup>*</sup>, Guowei Zhang, <strong>Gu Zhang</strong>, Mingrun Jiang, and Huazhe Xu</p>
@@ -719,7 +678,7 @@
         </article>
 
         <article class="pub-card">
-          <div class="pub-image standard"><img src="images/arraybot.jpeg" alt="ArrayBot cover" loading="lazy" decoding="async"></div>
+          <div class="pub-image standard"><img src="images/arraybot.jpeg" alt="ArrayBot cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">ArrayBot: Reinforcement Learning for Generalizable Distributed Manipulation through Touch</h3>
             <p class="authors">Zhengrong Xue<sup>*</sup>, Han Zhang<sup>*</sup>, Jingwen Chen, Zhengmao He, Yuanchen Ju, Changyi Lin, <strong>Gu Zhang</strong>, and Huazhe Xu</p>
@@ -734,7 +693,7 @@
         </article>
 
         <article class="pub-card">
-          <div class="pub-image wide"><img src="images/iros2023.png" alt="Flexible Handover cover" loading="lazy" decoding="async"></div>
+          <div class="pub-image wide"><img src="images/iros2023.png" alt="Flexible Handover cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">Flexible Handover with Real-Time Robust Dynamic Grasp Trajectory Generation</h3>
             <p class="authors"><strong>Gu Zhang</strong>, Hao-shu Fang, Hongjie Fang, and Cewu Lu</p>
@@ -747,7 +706,7 @@
         </article>
 
         <article class="pub-card">
-          <div class="pub-image wide"><img src="images/icml2023.jpeg" alt="IOT-CL cover" loading="lazy" decoding="async"></div>
+          <div class="pub-image wide"><img src="images/icml2023.jpeg" alt="IOT-CL cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">Understanding and Generalizing Contrastive Learning from the Inverse Optimal Transport Perspective</h3>
             <p class="authors">Liangliang Shi, <strong>Gu Zhang</strong>, Haoyu Zhen, and Junchi Yan</p>
@@ -760,7 +719,7 @@
         </article>
 
         <article class="pub-card">
-          <div class="pub-image standard"><img src="images/nips.jpeg" alt="Relative Entropic Optimal Transport cover" loading="lazy" decoding="async"></div>
+          <div class="pub-image standard"><img src="images/nips.jpeg" alt="Relative Entropic Optimal Transport cover" loading="lazy"></div>
           <div>
             <h3 class="pub-title">Relative Entropic Optimal Transport: a Prior-aware Matching Perspective to Unbalanced Classification</h3>
             <p class="authors">Liangliang Shi, Haoyu Zhen, <strong>Gu Zhang</strong>, and Junchi Yan</p>
@@ -780,24 +739,23 @@
         <p>Selected honors</p>
       </div>
       <ul class="plain-list">
-        <li>2025: <strong>Best Student Paper Award Finalist, RSS 2025</strong></li>
-        <li>2025: <strong>Best Paper Award, Beyond Pick and Place workshop at ICRA 2025</strong></li>
-        <li>2024: <strong>Best Paper Award,Noosphere workshop at RSS 2024</strong></li>
+        <li>2025: <strong>Best Paper Award in Beyond Pick and Place workshop at ICRA 2025</strong></li>
+        <li>2024: <strong>Best Paper Award in Noosphere workshop at RSS 2024</strong></li>
         <li>2024: Best Bachelor Thesis Award of Shanghai Jiao Tong University</li>
         <li>2024: Shanghai Outstanding Graduates</li>
-        <!-- <li>2024: Zhiyuan Outstanding Scholarship (Top 30 winners in Zhiyuan Honor College, RMB 20,000)</li> -->
-        <li>2023: <strong>SenseTime Scholarship</strong> (Top 30 undergraduate AI researchers nationwide)</li>
-        <!-- <li>2023: Shanghai Scholarship (Top 0.2% in Shanghai, RMB 8,000)</li>
+        <li>2024: Zhiyuan Outstanding Scholarship (Top 30 winners in Zhiyuan Honor College, RMB 20,000)</li>
+        <li>2023: <strong>SenseTime Scholarship</strong> (Top 30 undergraduate AI researchers nationwide, RMB 20,000)</li>
+        <li>2023: Shanghai Scholarship (Top 0.2% in Shanghai, RMB 8,000)</li>
         <li>2022: <strong>National Scholarship</strong> (Top 0.2% nationwide, RMB 8,000)</li>
-        <li>2022: Hanying Juhua Scholarship (Top 15 winners in Zhiyuan Honor College, RMB 15,000)</li> -->
-        <li>2021, 2022: <strong>National Scholarship</strong> (Highest Honor for undergraduates in China)</li>
-        <!-- <li>2021, 2022: A-level Merit Scholarship (Top 1% SJTU, RMB 1,500)</li>
+        <li>2022: Hanying Juhua Scholarship (Top 15 winners in Zhiyuan Honor College, RMB 15,000)</li>
+        <li>2021: <strong>National Scholarship</strong> (Top 0.2% nationwide, RMB 8,000)</li>
+        <li>2021, 2022: A-level Merit Scholarship (Top 1% SJTU, RMB 1,500)</li>
         <li>2021, 2022: Merit Student (Top 5% SJTU)</li>
-        <li>2020, 2021, 2022, 2023: Zhiyuan Honor Scholarship (Top 5% SJTU, RMB 5,000)</li> -->
+        <li>2020, 2021, 2022, 2023: Zhiyuan Honor Scholarship (Top 5% SJTU, RMB 5,000)</li>
       </ul>
     </section>
 
-    <p class="service-line"><strong>Service.</strong> Reviewer for CVPR, ECCV, ICRA, CoRL, IROS, ICLR, NeurIPS, RA-L, TASE.</p>
+    <p class="service-line"><strong>Service.</strong> Reviewer for CVPR, ECCV, ICRA, CoRL, IROS, ICLR, NeurIPS, RA-L, and IJCAI.</p>
   </main>
 
   <script>
@@ -823,64 +781,6 @@
     }, { rootMargin: '-20% 0px -75% 0px' });
 
     sections.forEach(section => observer.observe(section));
-
-    // Lazy-load publication videos so the page shows local posters first.
-    const loadVideo = (video) => {
-      if (!video || video.dataset.loaded === 'true') return;
-      video.src = video.dataset.src;
-      video.preload = video.dataset.priority === 'high' ? 'auto' : 'metadata';
-      video.dataset.loaded = 'true';
-      video.load();
-      video.play().catch(() => {});
-    };
-
-    const setupVideoLoop = (video) => {
-      if (!video || video.dataset.loopBound === 'true') return;
-
-      const loopEnd = Number.parseFloat(video.dataset.loopEnd);
-      if (!Number.isFinite(loopEnd) || loopEnd <= 0) {
-        video.dataset.loopBound = 'true';
-        return;
-      }
-
-      const restartVideo = () => {
-        video.currentTime = 0;
-        video.play().catch(() => {});
-      };
-
-      video.addEventListener('timeupdate', () => {
-        const duration = Number.isFinite(video.duration) ? video.duration : loopEnd;
-        const effectiveLoopEnd = Math.min(loopEnd, duration);
-        if (video.currentTime >= effectiveLoopEnd) {
-          restartVideo();
-        }
-      });
-
-      video.dataset.loopBound = 'true';
-    };
-
-    const videos = document.querySelectorAll('video[data-src]');
-    const videoObserver = new IntersectionObserver((entries, currentObserver) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        loadVideo(entry.target);
-        currentObserver.unobserve(entry.target);
-      });
-    }, { rootMargin: '240px 0px' });
-
-    videos.forEach(video => {
-      setupVideoLoop(video);
-
-      video.addEventListener('canplay', () => {
-        video.play().catch(() => {});
-      }, { once: true });
-
-      if (video.dataset.priority === 'high') {
-        loadVideo(video);
-      } else {
-        videoObserver.observe(video);
-      }
-    });
   </script>
 </body>
 </html>
