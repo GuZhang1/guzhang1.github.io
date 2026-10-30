@@ -328,6 +328,11 @@
       object-fit: cover;
     }
 
+    .pub-image.teaser img {
+      object-fit: contain;
+      background: #ffffff;
+    }
+
     .pub-image video {
       object-fit: contain;
       background:
@@ -527,8 +532,8 @@
     <section class="panel hero" id="home">
       <div class="hero-copy">
         <h1>Gu Zhang</h1>
-        <p class="subtitle">Ph.D. student in Computer Science, IIIS, Tsinghua University</p>
-        <p>I am a second-year Ph.D. student in Computer Science at <a href="https://iiis.tsinghua.edu.cn/">Institute for Interdisciplinary Information Sciences (IIIS), Tsinghua University</a> under the supervision of Prof. <a href="https://hxu.rocks/">Huazhe Xu</a>. I obtained my bachelor's degree from <a href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University (SJTU)</a> and won the <a href="https://www.jwc.sjtu.edu.cn/info/1030/115841.htm">Best Bachelor Thesis Award</a>.</p>
+        <p class="subtitle">Third-year Ph.D. student in Computer Science, IIIS, Tsinghua University</p>
+        <p>I am a third-year Ph.D. student in Computer Science at <a href="https://iiis.tsinghua.edu.cn/">Institute for Interdisciplinary Information Sciences (IIIS), Tsinghua University</a> under the supervision of Prof. <a href="https://hxu.rocks/">Huazhe Xu</a>. I obtained my bachelor's degree from <a href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University (SJTU)</a> and won the <a href="https://www.jwc.sjtu.edu.cn/info/1030/115841.htm">Best Bachelor Thesis Award</a>.</p>
         <p>My research mainly focuses on robotic manipulation, with an emphasis on building generalizable, dexterous, and robust manipulation capabilities. I am also interested in tactile sensing.</p>
         <p>During my undergraduate study, I was fortunate to be mentored by Prof. <a href="https://www.mvig.org/">Cewu Lu</a> and Prof. <a href="https://thinklab.sjtu.edu.cn/">Junchi Yan</a>. I am also a research visiting student at <a href="https://www.mit.edu/">MIT</a> and <a href="https://mitibmwatsonailab.mit.edu/">MIT-IBM Watson AI Lab</a> under the supervision of Prof. <a href="https://web.mit.edu/cocosci/josh.html">Josh Tenenbaum</a> and Prof. <a href="https://people.csail.mit.edu/ganchuang/">Chuang Gan</a>.</p>
         <div class="link-row">
@@ -550,6 +555,7 @@
         <p>Selected recent updates</p>
       </div>
       <ul class="news-list">
+        <li>[Oct. 2026]: We released <a href="https://touchbridge2026.github.io/"><strong>TouchBridge</strong></a> for tactile-conditioned human-to-robot transfer.</li>
         <li>[Feb. 2026]: <strong>UniDex</strong> is accepted by CVPR 2026.</li>
         <li>[Jun. 2025]: <strong>Reactive Diffusion Policy</strong> was nominated as <strong style="color:#b3261e;">Best Student Paper Finalist</strong> at RSS 2025.</li>
         <li>[May. 2025]: <strong>Reactive Diffusion Policy</strong> won the <strong style="color:#b3261e;">Best Paper Award</strong> in the Beyond Pick and Place workshop at ICRA 2025.</li>
@@ -563,10 +569,27 @@
     <section class="panel section" id="publications">
       <div class="section-header">
         <h2>Publications</h2>
-        <p><sup>*</sup> indicates equal contribution, <sup>&dagger;</sup> indicates equal advising. Representative papers are highlighted.</p>
+        <p><sup>*</sup> indicates equal contribution, <sup>&dagger;</sup> indicates project lead. Representative papers are highlighted.</p>
       </div>
 
       <div class="pub-list">
+        <article class="pub-card featured" id="touchbridge">
+          <div class="pub-image banner">
+            <video autoplay muted loop playsinline preload="none" poster="images/touchbridge-poster.jpg" data-src="assets/videos/touchbridge-web.mp4" data-priority="high" aria-label="TouchBridge teaser and dexterous manipulation demos"></video>
+          </div>
+          <div>
+            <h3 class="pub-title">TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation</h3>
+            <p class="authors">Haozhe Zhang<sup>*</sup>, <strong>Gu Zhang<sup>*&dagger;</sup></strong>, Zirui Zou<sup>*</sup>, Yuzheng Chen, Jinlong Wu, Zixuan Hu, Jianke Zhang, Yucheng Hu, Zhecheng Yuan, and Huazhe Xu</p>
+            <p class="meta"><em>Preprint</em>, 2026</p>
+            <div class="pub-links">
+              <a href="https://touchbridge2026.github.io/">Project Page</a>
+              <a href="https://touchbridge2026.github.io/TouchBridge.pdf">Paper</a>
+              <a href="https://x.com/Gu__Zhang/status/2116210537235198107">Twitter</a>
+            </div>
+            <p class="abstract">TouchBridge unlocks contact-rich dexterous manipulation from human demonstrations alone. By preserving contact through fingertip touch, it enables autonomous robot policies fine-tuned with <strong>zero teleoperated robot data</strong> and <strong>7&times; faster demonstration collection</strong>, achieving performance close to policies trained on robot-collected data without object models or simulation.</p>
+          </div>
+        </article>
+
         <article class="pub-card featured">
           <div class="pub-image banner">
             <video autoplay muted loop playsinline preload="none" poster="images/unidex.png" data-src="assets/videos/unidex-full-web.mp4" data-priority="high" data-loop-end="28"></video>
@@ -599,7 +622,7 @@
           </div>
           <div>
             <h3 class="pub-title">Reactive Diffusion Policy: Slow-Fast Visual-Tactile Policy Learning for Contact-Rich Manipulation</h3>
-            <p class="authors">Han Xue<sup>*</sup>, Jieji Ren<sup>*</sup>, Wendi Chen<sup>*</sup>, <strong>Gu Zhang</strong>, Yuan Fang, Guoying Gu, Huazhe Xu<sup>&dagger;</sup>, and Cewu Lu<sup>&dagger;</sup></p>
+            <p class="authors">Han Xue<sup>*</sup>, Jieji Ren<sup>*</sup>, Wendi Chen<sup>*</sup>, <strong>Gu Zhang</strong>, Yuan Fang, Guoying Gu, Huazhe Xu, and Cewu Lu</p>
             <p class="meta"><em><strong style="color:#b3261e;">Best Student Paper Finalist</strong>, Robotics: Science and Systems (RSS)</em>, 2025</p>
             <p class="meta"><em><strong style="color:#b3261e;">Best Paper Award</strong>, ICRA Beyond Pick and Place Workshop</em>, 2025</p>
             <div class="pub-links">
@@ -668,6 +691,40 @@
               </span>
             </div>
             <p class="abstract">DIFFTACTILE is a physics-based and fully differentiable tactile simulation system built to provide dense and physically accurate tactile feedback for robotic manipulation.</p>
+          </div>
+        </article>
+
+        <article class="pub-card" id="slim">
+          <div class="pub-image teaser">
+            <img src="images/slim-teaser.png" alt="SLIM overview: action-grounded predictive latent learning, model efficiency, latency, and real-world results" loading="lazy" decoding="async">
+          </div>
+          <div>
+            <h3 class="pub-title">SLIM-0.5B: Learning Action-Grounded Predictive Latents for Robot Manipulation</h3>
+            <p class="authors">Jingkai Wang<sup>*</sup>, Zihan Tang<sup>*</sup>, <strong>Gu Zhang</strong>, Mingyu Cao, Jiapeng Chen, Jingjiao Zhao, Xiansheng Chen, Pengwei Wang, Lemao Liu, and Dejing Dou</p>
+            <p class="meta"><em>Preprint</em>, 2026</p>
+            <div class="pub-links">
+              <a href="https://kzz1031.github.io/slim-project-page/">Project Page</a>
+              <a href="https://arxiv.org/abs/2608.09771">Paper</a>
+              <a href="https://github.com/kzz1031/SLIM">Code</a>
+            </div>
+            <p class="abstract">SLIM is a compact 0.5B-parameter policy that learns action-grounded predictive latents from robot trajectories, enabling robust, low-latency language-guided manipulation with a lightweight Mixture-of-Transformers backbone.</p>
+          </div>
+        </article>
+
+        <article class="pub-card" id="x-distill">
+          <div class="pub-image teaser">
+            <img src="images/x-distill-teaser.png" alt="X-Distill overview: cross-architecture vision distillation, visuomotor policy learning, and real-world success rates" loading="lazy" decoding="async">
+          </div>
+          <div>
+            <h3 class="pub-title">X-Distill: Cross-Architecture Vision Distillation for Visuomotor Learning</h3>
+            <p class="authors">Maanping Shao<sup>*</sup>, Feihong Zhang<sup>*</sup>, <strong>Gu Zhang</strong>, Baiye Cheng, Zhengrong Xue, and Huazhe Xu</p>
+            <p class="meta"><em>IEEE Robotics and Automation Letters (RA-L)</em>, 2026</p>
+            <div class="pub-links">
+              <a href="https://x-distill.github.io/">Project Page</a>
+              <a href="https://ieeexplore.ieee.org/abstract/document/11602640">Paper</a>
+              <a href="https://arxiv.org/abs/2601.11269">arXiv</a>
+            </div>
+            <p class="abstract">X-Distill transfers visual knowledge from a large DINOv2 model into a compact ResNet-18 encoder, enabling data-efficient diffusion policies that outperform larger vision models and policies using 3D observations across simulated and real-world manipulation tasks.</p>
           </div>
         </article>
 
